@@ -5,6 +5,7 @@ class Program
 
     public static void Main(string[] args)
     {
+        Console.Clear();
         Hero? hero;
         do
         {
