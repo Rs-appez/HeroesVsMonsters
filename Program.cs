@@ -5,6 +5,8 @@ class Program
 
     public static void Main(string[] args)
     {
+
+        bool GameRunning = true;
         Console.Clear();
         Hero? hero;
         do
@@ -37,7 +39,7 @@ class Program
         Console.WriteLine("Welcome to the game! Use arrow keys or ZQSD (or HJKL) to move. Press Esc, Ctrl+Q or X to quit.");
         game.ShowMap();
 
-        while (true)
+        while (GameRunning)
         {
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             Console.Clear();
@@ -66,7 +68,9 @@ class Program
                 case ConsoleKey.Escape:
                 case ConsoleKey.X:
                 case ConsoleKey.Q when keyInfo.Modifiers.HasFlag(ConsoleModifiers.Control):
-                    return;
+                    GameRunning = false;
+                    Console.WriteLine("Thanks for playing! Goodbye.");
+                    break;
             }
             game.ShowMap();
 
