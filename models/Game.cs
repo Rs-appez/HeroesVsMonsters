@@ -171,7 +171,7 @@ public class Game
                 Console.WriteLine("Your turn! Press any key to attack...");
                 Console.ReadKey();
                 DisplayFight(HeroAttack: true);
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
                 DisplayFight();
                 _hero.Hit(_monsters[_hero.Position]);
                 HeroTurn = false;
@@ -182,7 +182,7 @@ public class Game
                 Console.WriteLine($"It's the {_monsters[_hero.Position].GetType().Name}'s turn! Press any key to continue...");
                 Console.ReadKey();
                 DisplayFight(MonsterAttack: true);
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
                 DisplayFight();
                 _monsters[_hero.Position].Hit(_hero);
                 HeroTurn = true;
